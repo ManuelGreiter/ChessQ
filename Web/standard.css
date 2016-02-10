@@ -1,0 +1,106 @@
+/* quick clearfix class */
+.clear { clear: both; display: none; }
+
+html { background-color: #888; }
+
+#content {
+	width: 100%;
+	/* width: 1050px; */
+	min-height: 800px;
+	margin: 10px auto 0px auto;
+}
+
+#content .content_inner { width: 100%; }
+
+#intro {
+	width: 100%;
+	margin-top: 20px;
+	background-color: #fff;
+}
+
+#intro .inner { padding: 10px 20px; }
+
+
+
+#playarea {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	margin: 15px 0px 50px 0px;
+}
+
+
+#board, #sidebar { float: left; }
+
+#board {
+	width: 80%;
+	/* width: 800px; 
+	height: 800px;
+	*/
+	margin-bottom: 50px;
+	background-color: #e0e0e0;
+}
+
+#board .row {
+	position: relative;
+	float:left;
+	height: auto;
+}
+
+#board .row .square {
+	float: left;
+	position:relative;
+}
+
+#board .square .piece_img {
+	position: absolute;
+	height: 75%;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	display:inline-block;
+	cursor: move;
+}
+
+#board .square.selected { background-color: rgba(20,85,30,0.5) !important; }
+
+/* chessboard row description (A - B...) */
+#board .row:after {
+	position: absolute;
+	content: attr(data-after);
+	top: 45%;
+	font-weight: bold;
+	color: #444;
+	width: 3%;
+	padding-left: 2%;
+}
+
+/* chessboard square rank (1 - 2...) */
+#board .row .square:before {
+	position: absolute;
+	content: attr(data-before);
+	font-weight: bold;
+	color: #444;
+	left: 45%;
+	bottom: -25px;
+}
+
+
+/* color the squares */
+#board .row:nth-child(even) .square:nth-child(odd),
+#board .row:nth-child(odd) .square:nth-child(even) { 
+	background-color: #8ca2ad; /* white */
+}
+
+#sidebar {
+	width: 15%;
+	margin-left: 5%;
+	height: 200px;
+	overflow: scroll;
+	background-color: #ececec;
+}
+
+#sidebar .inner { padding: 0px 8px; }
+#sidebar .inner p { margin: 3px 0px; }
