@@ -34,9 +34,8 @@ html { background-color: #888; }
 
 #board {
 	width: 80%;
-	/* width: 800px; 
-	height: 800px;
-	*/
+	max-width: 1050px;
+	min-width: 320px;
 	margin-bottom: 50px;
 	background-color: #e0e0e0;
 }
